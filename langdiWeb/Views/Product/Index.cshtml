@@ -1,0 +1,108 @@
+﻿@model langdiWeb.Models.ProductViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+    var list = Model.NewsList;
+}
+@section product{active}
+@section css{
+    <link href="/Content/right.css" rel="stylesheet" />
+    <link href="/Content/list.css" rel="stylesheet" />
+    <style>
+        .title {
+            height: 90px;
+            line-height:90px;
+            width: 100%;
+        }
+
+            .title img {
+                width: 120px;
+                height: 80px;
+            }
+
+        #table td {
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .media-left img {
+            width: 100px;
+            height: 60px;
+        }
+    </style>
+}
+<div class="rhead">
+    <div class="row">
+        <div class="col-xs-12 col-md-9 hidden-xs">
+            <div class="h2">文章列表</div>
+        </div>
+        <div class=" col-md-3 hidden-xs">
+            @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-default langdibtn" })
+        </div>
+    </div>
+
+</div>
+<div class="rheadxs">
+    <div>
+        @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-default langdibtn" })
+    </div>
+    <div class="h2">
+        文章列表
+    </div>
+</div>
+<div class="list hidden-lg hidden-sm hidden-md">
+    @if (list != null && list.Count > 0)
+    {
+        foreach (var item in list)
+        {
+            <div class="media">
+                <div class="media-left media-middle">
+                    <a href="#">
+                        <img class="media-object" src="/upload/@item.Image.Src" alt="@item.Image.Alt">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">@item.Title</h4>
+                    <div>
+                        @Html.ActionLink("编辑", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("删除", "Delete", new { /* id=item.PrimaryKey */ })
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+
+</div>
+<div class="hidden-xs">
+    <table id="table" class="table langditable table-hover">
+        <tr class="hidden-xs">
+            <th>内容</th>
+            <th>分类</th>
+            <th class="oper" style="padding-right:30px;">操作</th>
+        </tr>
+        @if (list != null && list.Count > 0)
+        {
+            foreach (var item in list)
+            {
+                <tr>
+                    <td>
+                        <div class="title">
+                            <img src="/upload/@item.Image.Src" alt="@item.Image.Alt" />
+                            <label>@item.Title</label>
+                        </div>
+                    </td>
+                    <td>@item.Category.Name</td>
+                    <td class="oper">
+                        @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("删除", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+<div class="pagecontent pull-right">
+    @Html.Pager(Model.NewsList, new PagerOptions() { AutoHide = false, ContainerTagName = "ul", CssClass = "pagination mypage", PagerItemWrapperFormatString = "<li>{0}</li>", CurrentPagerItemWrapperFormatString = "<li class='active'><a href='#'>{0}</a></li>", PageIndexParameterName = "PageIndex" })
+</div>

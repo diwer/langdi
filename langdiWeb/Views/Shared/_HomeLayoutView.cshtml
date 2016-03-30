@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "MakeReal3D网站后天管理系统";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/Content/layout.css" rel="stylesheet" />
+    @RenderSection("css", required: false)
+
+}
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-xs-6"><div class="logo"><img src="~/Images/logo.png" /></div></div>
+            <div class="col-md-2 col-xs-6">@Html.Action("LoginStatu")</div>
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-2 col-xs-12">
+
+            <div class="row list-group leftmenu">
+                <a href="/product/index" class="@RenderSection("product",false) list-group-item col-xs-3 col-md-12 menu product">
+                    产品动态
+                </a>
+                <a href="/category/index" class="@RenderSection("category", false) list-group-item col-xs-3 col-md-12 menu category">动态分类</a>
+                <a href="/video/Index" class="@RenderSection("video",false) list-group-item col-xs-3 col-md-12  menu category">管理视频</a>
+                @if (RoleHelper.GetUserRole(this.User.Identity.Name) == LangdiDomain.Role.Manager)
+                {
+                    <a href="/user/index" class="@RenderSection("account",false) list-group-item col-xs-3 col-md-12  menu account">管理账号</a>
+                }
+                <a href="/contacter/index" class="@RenderSection("contact", false) list-group-item col-xs-3 col-md-12 menu category">申请试用</a>
+                <a href="/user/edit/@this.User.Identity.Name" class="@RenderSection("password",false) list-group-item col-xs-3 col-md-12 menu password ">修改密码</a>
+            </div>
+        </div>
+
+        <div class="col-md-10 col-xs-12">
+            <div class="rightcontent">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </div>
+    </div>
+
+</footer>
+@section scripts{
+    @RenderSection("scripts", required: false)
+}

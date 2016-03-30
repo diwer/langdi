@@ -1,0 +1,73 @@
+﻿@model langdiWeb.Models.ContacterViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+    var list = Model.ContactsList;
+}
+@section contact{active}
+@section css{
+    <link href="/Content/right.css" rel="stylesheet" />
+    <link href="~/Content/list.css" rel="stylesheet" />
+    <style>
+        .name {
+            width: 70%;
+        }
+
+        .oper {
+            width: 150px;
+            text-align: center;
+        }
+
+        #table td {
+            padding-top: 15px;
+        }
+    </style>
+}
+<div class="rhead">
+    <div class="row">
+        <div class="col-xs-12 col-md-9 hidden-xs">
+            <div class="h2">试用申请</div>
+        </div>
+    </div>
+
+</div>
+<div class="rheadxs">
+    <div class="h2">
+        试用申请
+    </div>
+</div>
+<div class="hidden-xs">
+    <table id="table" class="table langditable table-hover">
+        <tr class="hidden-xs">
+            <th>姓名</th>
+            <th>单位</th>
+            <th>电话</th>
+            <th class="oper" style="padding-right:30px;">操作</th>
+        </tr>
+        @if (list != null && list.Count > 0)
+        {
+            foreach (var item in list)
+            {
+                <tr>
+                    <td>
+                        <div class="title">
+
+                            <label>@item.Name</label>
+                        </div>
+                    </td>
+                    <td>@item.Company</td>
+                    <td>@item.Phone</td>
+                    <td class="oper">
+                        @Html.ActionLink("查看", "Detail", new { id = item.Id }) |
+                        <a href="/contacter/Delete/@item.Id" onclick="return confirm('确认删除')">删除</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+<div class="pagecontent pull-right">
+    @Html.Pager(Model.ContactsList, new PagerOptions() { AutoHide = false, ContainerTagName = "ul", CssClass = "pagination mypage", PagerItemWrapperFormatString = "<li>{0}</li>", CurrentPagerItemWrapperFormatString = "<li class='active'><a href='#'>{0}</a></li>", PageIndexParameterName = "PageIndex" })
+</div>
+

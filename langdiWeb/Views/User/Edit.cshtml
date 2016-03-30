@@ -1,0 +1,85 @@
+﻿@model LangdiDomain.User
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+}
+@section password{active}
+@section css{
+    <link href="~/Content/iCheck/square/yellow.css" rel="stylesheet" />
+    <style>
+        .langdibtn {
+            width: 100%;
+            line-height: 30px;
+        }
+    </style>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal langdiform">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+
+            <div class="col-md-12">
+                <label>账号：</label> @Html.DisplayFor(m => m.UserName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-12 col-xs-12">
+                <label>密码</label>
+                <input type="password" value="" name="Password" class="form-control" placeholder="*填写新密码" />
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @if (RoleHelper.GetUserRole(this.User.Identity.Name) == LangdiDomain.Role.Manager)
+        {
+            <div class="form-group">
+                @if (Model.Role == LangdiDomain.Role.Editer)
+                {
+                    <div class=" col-xs-6 col-md-6" style="text-align:center">
+                        <label>权限</label>
+                        <input type="radio" name="Role" checked value="@LangdiDomain.Role.Editer"> 编辑
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <input type="radio" name="Role" value="@LangdiDomain.Role.Manager"> 管理员
+                    </div>
+                }
+                else
+                {
+                    <div class=" col-xs-6 col-md-6" style="text-align:center">
+                        <input type="radio" name="Role"  value="@LangdiDomain.Role.Editer"> 编辑
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <input type="radio" name="Role" checked value="@LangdiDomain.Role.Manager"> 管理员
+                    </div>
+                }
+            </div>
+        }
+        <div class="form-group">
+            <div class=" col-xs-6 col-md-6" style="text-align:center">
+                <a href="/user/index" class="btn btn-default langdibtn">取消</a>
+            </div>
+            <div class="col-xs-6 col-md-6">
+                <button type="submit" class="btn btn-default langdibtn">保存</button>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-red',
+                radioClass: 'iradio_square-yellow',
+                increaseArea: '20%' // optional
+            });
+        });
+    </script>
+}

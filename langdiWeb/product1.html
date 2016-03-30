@@ -1,0 +1,382 @@
+﻿<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>MakeReal3D | 专注于工业应用虚拟实现平台</title>
+    <link rel="shortcut icon" href="images/logo_1.png" type="image/x-icon">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicono">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <style>
+    body {
+        background: #fff;
+    }
+    
+    h1 {
+        color: #000;
+        font-family: Arial, "微软雅黑";
+        color: #000;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        margin-top: 0.5em;
+    }
+    
+    p {
+        color: #9c9c9c;
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+    
+    .shadow:hover {
+        box-shadow: 5px 5px 5px #9c9c9c;
+    }
+    
+    .banner #group .btn {
+        font-size: 24px;
+        background: transparent;
+        border: 1px solid #0471BB;
+        color: #0471BB;
+    }
+    
+    .banner #group .btn:hover {
+        background: #0471BB;
+        opacity: 1;
+        color: #ffffff;
+    }
+    
+    #group1 .btn {
+        font-size: 24px;
+        background: transparent;
+        border: 1px solid #0471BB;
+        color: #0471BB;
+    }
+    
+    #group1 .btn:hover {
+        background: #0471BB;
+        color: #ffffff;
+    }
+    
+    .btn-toolbar .btn {
+        color: #0471BB;
+        border: 1px solid #0471BB;
+        background: transparent;
+    }
+    
+    .btn-toolbar .btn:hover {
+        background: #0471BB;
+        color: #fff;
+    }
+    
+    .shadow {
+        padding-left: 0;
+    }
+    /* .shadow .col-md-4{
+    padding-left: 0;
+  }*/
+    
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    
+    .aaa {
+        display: none;
+        position: absolute;
+        bottom: -650px;
+        left:60%;
+    }
+    
+    @media(max-width: 768px) {
+        .aaa {
+            display: none;
+            position: absolute;
+        }
+    }
+    
+    .bds_weixin {
+        position: relative;
+    }
+    
+    .bbb:hover .aaa {
+        display: block;
+    }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+    <!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+    <div class="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img style="margin-top:-10px" src="images/logo1.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index1.html">首页</a></li>
+                    <li><a href="productFunction.html">产品功能</a></li>
+                    <li><a href="productApplication.html">解决方案</a></li>
+                    <li class="active"><a href="/portal/ProductList">产品动态</a></li>
+                    <li><a href="joinus.html">招贤纳士</a></li>
+                    <li><a href="address.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="btn-group btn-group-justified col-xs-12 visible-xs" role="group" id="group1" style="margin: 40px 0 10px 0">
+        <div class="btn-group">
+            <button type="button" class="btn" style="background: #0471BB;color: #ffffff;">市场活动</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn">测试信息</button>
+        </div>
+    </div>
+    <div class="banner hidden-xs visible-lg">
+        <div>
+            <img class="img-responsive" src="images/productTrends.png" />
+        </div>
+        <div class="text text-center" style="position: absolute; margin-top: -16%;left: 0;right:0">
+            <h1 class="mt1em" style="color:#fff;font-size:3em">产品动态</h1>
+            <p style="color:#fff;font-size:1.5em;opacity: 0.7">让您们更好地了解我们在做什么。。。</p>
+            <div class="btn-group mt1em" role="group" id="group">
+                <button type="button" class="btn" style="font-size: 1.5em;background: #0471BB;color: #ffffff;  padding: 0.4em 2em;">市场活动</button>
+                <button type="button" style="padding: 0.4em 2em;font-size: 1.5em;" class="btn btn-primary">测试信息</button>
+            </div>
+        </div>
+    </div>
+    <div class="banner hidden-xs hidden-lg">
+        <div>
+            <img class="img-responsive" src="images/产品动态banner-pad.png" />
+        </div>
+        <div class="text text-center" style="position: absolute; margin-top: -30%;left: 0;right:0">
+            <h1 class="mt2em" style="color:#fff;">动态产品</h1>
+            <p class="mt2em" style="color:#fff;">让您们更好地了解我们在做什么。。。</p>
+            <div class="btn-group mt3em" role="group" id="group2">
+                <button type="button" class="btn" style=" background: #0471BB;opacity: 0.5;color: #ffffff;">市场活动</button>
+                <button type="button" class="btn btn-primary">测试信息</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row" class="img-responsive">
+                    <div class="col-md-4 "><img src="images/产品展示1.png" class="img-responsive" /> </div>
+                    <div class="col-md-8 ">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row">
+                    <div class="col-md-4"><img src="images/产品展示2.png" class="img-responsive" /> </div>
+                    <div class="col-md-8">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow  mt2em">
+                <div class="row" class="img-responsive">
+                    <div class="col-md-4 "><img src="images/产品展示1.png" class="img-responsive" /> </div>
+                    <div class="col-md-8 ">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row">
+                    <div class="col-md-4"><img src="images/产品展示2.png" class="img-responsive" /> </div>
+                    <div class="col-md-8">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow  mt2em">
+                <div class="row">
+                    <div class="col-md-4 "><img src="images/产品展示1.png" class="img-responsive" /> </div>
+                    <div class="col-md-8 ">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row">
+                    <div class="col-md-4"><img src="images/产品展示2.png" class="img-responsive" /> </div>
+                    <div class="col-md-8">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow  mt2em">
+                <div class="row" class="img-responsive">
+                    <div class="col-md-4 "><img src="images/产品展示1.png" class="img-responsive" /> </div>
+                    <div class="col-md-8 ">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row">
+                    <div class="col-md-4"><img src="images/产品展示2.png" class="img-responsive" /> </div>
+                    <div class="col-md-8">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow  mt2em">
+                <div class="row" class="img-responsive">
+                    <div class="col-md-4 "><img src="images/产品展示1.png" class="img-responsive" /> </div>
+                    <div class="col-md-8 ">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row">
+                    <div class="col-md-4"><img src="images/产品展示2.png" class="img-responsive" /> </div>
+                    <div class="col-md-8">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow  mt2em">
+                <div class="row" class="img-responsive">
+                    <div class="col-md-4 "><img src="images/产品展示1.png" class="img-responsive" /> </div>
+                    <div class="col-md-8 ">
+                        <h1>MakeReal3D VSP 专注于工业应用的虚拟现实仿真平台</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4 shadow mt2em">
+                <div class="row">
+                    <div class="col-md-4"><img src="images/产品展示2.png" class="img-responsive" /> </div>
+                    <div class="col-md-8">
+                        <h1>MakeReal3D VSP 专注于工</h1>
+                        <p class="ldf">朗迪锋是一家主要服务于高端制造业、能源行业和教 育行业的高科技企业。朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造朗迪锋是一家主要服务于高端制造
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12 mt2em hidden-sm hidden-xs" style="background: #EEE; margin-bottom: 2%">
+            <div class="btn-toolbar mt2em" role="toolbar" aria-label="..." style="margin-bottom: 2em;float: right">
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="#" type="button" class="btn " style=" background: #0471BB;color: #ffffff;">1</a>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="product.html" type="button" class="btn">2</a>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="#" type="button" class="btn">上一页</a>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <a href="product.html" type="button" class="btn">下一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="bottomNav mt1em">
+                    <li><a href="productFunction.html">产品功能&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="productApplication.html">解决方案&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="product1.html">产品动态&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="joinus.html">招贤纳士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="address.html">联系我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li>
+                        <div class="bbb">
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信公众号</a>
+                            <div class="aaa hidden-xs"><img src="images/erwemas.png" alt="" /></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-detail text-center">
+                <p style="margin-bottom:1em;opacity: 0.5;color:#fff">版权所有：北京朗迪锋科技有限公司京ICP备13044728
+                    <p>
+            </div>
+        </div>
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+    $(document).ready(function() {
+
+        //maxwidth 表示限制放多少个字
+
+        $(".ldf").each(function() {
+            var maxwidth = 66;
+            if ($(this).text().length > maxwidth) {
+                $(this).text($(this).text().substring(0, maxwidth));
+                $(this).html($(this).html() + "...");
+            }
+        });
+    });
+    </script>
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "langdiWeb", "langdiWeb\langdiWeb.csproj", "{EBD7521C-CB13-4BA4-8616-62DDA7AEC301}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangdiDb", "LangdiDb\LangdiDb.csproj", "{CBA0B299-0E41-46BE-B103-5A1760F5E9EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LangdiDomain", "LangdiDomain\LangdiDomain.csproj", "{A2B5CD7C-C22D-4F72-8382-A0857DDCF154}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBD7521C-CB13-4BA4-8616-62DDA7AEC301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD7521C-CB13-4BA4-8616-62DDA7AEC301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD7521C-CB13-4BA4-8616-62DDA7AEC301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD7521C-CB13-4BA4-8616-62DDA7AEC301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA0B299-0E41-46BE-B103-5A1760F5E9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA0B299-0E41-46BE-B103-5A1760F5E9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA0B299-0E41-46BE-B103-5A1760F5E9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA0B299-0E41-46BE-B103-5A1760F5E9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B5CD7C-C22D-4F72-8382-A0857DDCF154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B5CD7C-C22D-4F72-8382-A0857DDCF154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B5CD7C-C22D-4F72-8382-A0857DDCF154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B5CD7C-C22D-4F72-8382-A0857DDCF154}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

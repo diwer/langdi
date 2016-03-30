@@ -1,0 +1,13 @@
+﻿@model LangdiDomain.User
+<div class="logininfo">
+    @if (Model != null)
+    {
+        <label>@Model.UserName</label>
+    <a href="/sign/SignOut">退出</a>
+    }
+    else
+    {
+        <a href="/sign/login">登录</a>
+        <a href="/sign/SignOut">退出</a>
+    }
+</div>

@@ -1,0 +1,123 @@
+﻿@model LangdiDomain.Contacter
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+}
+@section contact{active}
+@section css{
+
+    <link href="~/Content/right.css" rel="stylesheet" />
+    <style>
+        .form {
+            margin-top: 0;
+            margin-left: 15px;
+            width: 100%;
+        }
+
+            .form select {
+                height: 45px;
+            }
+
+            .form option {
+                height: 45px;
+            }
+
+
+        .btn {
+            width: 100%;
+            height: 45px;
+            line-height: 30px;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        .img {
+            width: 240px;
+            height: 150px;
+            line-height: 140px;
+            text-align: center;
+            padding: 0;
+            background-color: ActiveCaption;
+        }
+
+            .img img {
+                width: 240px;
+                height: 150px;
+                margin: 0;
+                padding: 0;
+            }
+
+        .top15 {
+            padding-top: 15px;
+        }
+
+        #uploadImg input[type=file] {
+            display: none;
+        }
+    </style>
+}
+<div class="rhead">
+    <div class="row">
+        <div class="col-xs-12 col-md-9 hidden-xs" style="height:90px">
+            <div class="h2">试用申请</div>
+        </div>
+    </div>
+
+</div>
+<div class="rheadxs">
+    <div class="h2">
+        试用申请
+    </div>
+</div>
+<hr style="margin-top:-15px;"/>
+<div class="form langdiform"  >
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <div class="col-md-6 col-xs-12">
+            @Html.Label("姓名", htmlAttributes: new { @class = "control-label" })
+            @Html.Label(Model.Name, htmlAttributes: new { @class = "form-control" })
+          
+        </div>
+        <div class="col-md-6 col-xs-12">
+            @Html.Label("电话", htmlAttributes: new { @class = "control-label" })
+            @Html.Label(Model.Phone, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6 col-xs-12">
+            @Html.Label("单位", htmlAttributes: new { @class = "control-label" })
+            @Html.Label(Model.Company, htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="col-md-6 col-xs-12">
+            @Html.Label("邮箱", htmlAttributes: new { @class = "control-label" })
+            <label class="form-control">@Html.Raw(Model.Email)</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-12 col-xs-12">
+            @Html.Label("需求", htmlAttributes: new { @class = "control-label" })
+
+            <textarea rows="5"  readonly="readonly" class="form-control">@Model.NeedDoc</textarea>
+          
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12 col-xs-12">
+            @Html.Label("备注", htmlAttributes: new { @class = "control-label" })
+
+            <textarea rows="3" readonly="readonly" class="form-control">@Model.ReMark</textarea>
+
+        </div>
+    </div>
+    <div class="form-group" >
+        <div class="col-md-3 col-xs-6" style="padding-top:15px">
+            <a href="/contacter/index" class="btn btn-default langdibtn">返回</a>
+        </div>  
+    </div>
+    <div class="clearfix"></div>
+</div>
+

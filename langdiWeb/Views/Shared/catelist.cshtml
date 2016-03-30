@@ -1,0 +1,29 @@
+﻿@model langdiWeb.Models.CateListViewModel
+@if (Model.CateId == 0)
+{
+    <a href="/portal/productlist" style="border-radius: 6px 0 0 6px; background: #0471BB;color:#fff" class="btn">所有信息</a>
+}
+else
+{
+    <a href="/portal/productlist" class="btn">所有信息</a>
+
+}
+@foreach (var item in Model.CateList)
+{
+    if (item.Id == Model.CateId)
+    {
+        <a href="/portal/productlist?cateId=@item.Id" style="border-radius: 6px 0 0 6px; background: #0471BB;color:#fff" class="btn">@item.Name</a>
+    }
+    else
+    {
+        <a href="/portal/productlist?cateId=@item.Id" class="btn">@item.Name</a>}
+}
+
+@if (Model.CateId == -1)
+{
+    <a href="/portal/video" style="border-radius: 6px 0 0 6px; background: #0471BB;color:#fff" class="btn">原创视频</a>
+}
+else
+{
+    <a href="/portal/video" style="border-radius:0 6px 6px 0" class="btn">原创视频</a>
+}

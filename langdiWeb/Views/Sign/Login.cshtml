@@ -1,0 +1,65 @@
+﻿@model LangdiDomain.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    bool havaErrorMsg = false;
+    if (ViewBag.ErrorMsg != null)
+    {
+        havaErrorMsg = true;
+    }
+    bool modelError = false;
+
+    ICollection<ModelState> error = null;
+    if (ViewBag.Error != null)
+    {
+        error = ViewBag.Error as ICollection<ModelState>;
+        if (error != null && error.Count > 0)
+        {
+            modelError = true;
+        }
+    }
+}
+@section css{
+    <link href="~/Content/login.css" rel="stylesheet" />
+}
+<div class="logindiv">
+    <form class="form-horizontal" method="post" role="form">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="logo">
+                    <img src="~/Images/logo.png" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="error">
+                    @if (havaErrorMsg)
+                    {
+                        @ViewBag.ErrorMsg
+                    }
+                    @if (modelError)
+                    {
+                        @error.First().Errors[0]
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="text" name="UserName" class="form-control" id="username" placeholder="* 用户名">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="password" name="Password" class="form-control" id="password" placeholder="* 密码">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class=" col-sm-12">
+                <button type="submit" class="btn btn-default langdibtn loginbtn">登录</button>
+            </div>
+        </div>
+    </form>
+</div>

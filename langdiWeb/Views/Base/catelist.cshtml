@@ -1,0 +1,8 @@
+﻿@model List<LangdiDomain.Category>
+
+<a href="/portal/productlist" style="border-radius: 6px 0 0 6px;" class="btn">所有信息</a>
+@foreach (var item in Model)
+{
+    <a href="/portal/productlist?cateId=@item.Id" class="btn thisclass">@item.Name</a>
+}
+<a href="../../shipin.html" style="border-radius:0 6px 6px 0" class="btn">原创视频</a>

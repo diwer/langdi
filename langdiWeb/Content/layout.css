@@ -1,0 +1,161 @@
+﻿
+.header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color:#EEEEEF;
+}
+
+    .header .logo {
+    }
+
+    .header .logininfo {
+        line-height: 61px;
+        height: 61px;
+        float: right;
+    }
+
+.body-content {
+}
+
+    .body-content::after {
+        clear: both;
+    }
+
+    .body-content .leftmenu {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+        .body-content .leftmenu .on {
+            background-color: #0471BB;
+            color: #fff;
+        }
+
+        .body-content .leftmenu .menu:hover {
+            background-color: #0471BB;
+            color: #fff;
+        }
+
+        .body-content .leftmenu .menu {
+            height: 50px;
+            text-align: center;
+            padding-left: 30px;
+            font-size: 18px;
+            background-position: 30px center;
+            background-repeat: no-repeat;
+        }
+
+        .body-content .leftmenu .product {
+            background-image: url('/Images/productdontai.png');
+        }
+
+            .body-content .leftmenu .product:hover {
+                background-image: url('/Images/productafter.png');
+            }
+
+        .body-content .leftmenu .on.product {
+            background-image: url('/Images/productafter.png');
+        }
+
+        .body-content .leftmenu .category {
+            background-image: url('/Images/categorymange.png');
+        }
+
+
+
+            .body-content .leftmenu .category:hover {
+                background-image: url('/Images/categoryafter.png');
+            }
+
+        .body-content .leftmenu .on.category {
+            background-image: url('/Images/productafter.png');
+        }
+
+        .body-content .leftmenu .account {
+            background-image: url('/Images/accountmanger.png');
+        }
+
+
+
+
+            .body-content .leftmenu .account:hover {
+                background-image: url('../Images/accountaffter.png');
+            }
+
+        .body-content .leftmenu .on.account {
+            background-image: url('/Images/productafter.png');
+        }
+
+        .body-content .leftmenu .password {
+            background-image: url('/Images/changepassword.png');
+        }
+
+
+
+            .body-content .leftmenu .password:hover {
+                background-image: url('/Images/changepaswordafter.png');
+            }
+
+        .body-content .leftmenu .on.password {
+            background-image: url('/Images/productafter.png');
+        }
+
+    .body-content .rightcontent {
+        min-height: 600px;
+        margin-left: -15px;
+        margin-right: -15px;
+        border-left:solid 1px #DDD;
+    }
+
+footer {
+    text-align: center;
+}
+@media only screen and (min-width : 568px) {
+    .body-content .leftmenu .menu {
+    border:none;
+    }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .header .logo img {
+        max-height: 50px;
+    }
+
+    .header .logininfo {
+        line-height: 50px;
+        height: 50px;
+    }
+
+    .body-content .leftmenu .menu {
+        height: 50px;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 14px;
+        background-image:none;
+        line-height:30px;
+    }
+
+    .body-content .leftmenu .on.account {
+        background-image: none;
+    }
+
+    .body-content .leftmenu .on.product {
+        background-image: none;
+    }
+
+    .body-content .leftmenu .on.category {
+        background-image: none;
+    }
+
+    .body-content .leftmenu .on.password {
+        background-image: none;
+    }
+
+    .body-content .leftmenu .menu:hover {
+        background-image: none;
+    }
+
+    .body-content .leftmenu .menu label {
+        display: none;
+    }
+}

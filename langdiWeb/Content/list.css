@@ -1,0 +1,20 @@
+﻿table{
+    font-size:14px;
+}
+table a:hover{
+    color:#F08519;
+}
+table th{
+    background-color:#EEEEEF;
+    height:20px;
+}
+#table th,#table td{
+    padding-left:30px;
+}
+ #table{
+     margin-bottom:0;
+ }
+ #table .oper{
+     text-align:right;
+
+ }

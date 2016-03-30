@@ -1,0 +1,75 @@
+﻿@model IEnumerable<LangdiDomain.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+}
+@section category{active}
+@section css{
+    <link href="/Content/right.css" rel="stylesheet" />
+    <link href="~/Content/list.css" rel="stylesheet" />
+    <style>
+        .name {
+            width: 70%;
+        }
+
+        .oper {
+            width: 30px;
+            text-align: center;
+        }
+
+        #table td {
+            padding-top: 15px;
+        }
+    </style>
+}
+<div class="rhead">
+    <div class="row">
+        <div class="col-xs-12 col-md-9 hidden-xs">
+            <div class="h2">分类列表</div>
+        </div>
+        <div class=" col-md-3 hidden-xs">
+            @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-default langdibtn" })
+        </div>
+    </div>
+
+</div>
+<div class="rheadxs">
+    <div>
+        @Html.ActionLink("新增", "Create", null, new { @class = "btn btn-default langdibtn" })
+    </div>
+    <div class="h2">
+        分类列表
+    </div>
+</div>
+<div class="hidden-xs">
+    <table id="table" class="table langditable table-hover">
+        <tr class="hidden-xs">
+            <th>内容</th>
+            <th>分类</th>
+            <th class="oper" style="padding-right:30px;">操作</th>
+        </tr>
+        @if (list != null && list.Count > 0)
+        {
+            foreach (var item in list)
+            {
+                <tr>
+                    <td>
+                        <div class="title">
+                            <img src="/upload/@item.Image.Src" alt="@item.Image.Alt" />
+                            <label>@item.Title</label>
+                        </div>
+                    </td>
+                    <td>@item.Category.Name</td>
+                    <td class="oper">
+                        @Html.ActionLink("编辑", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("删除", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+<div class="pagecontent pull-right">
+    @Html.Pager(Model.NewsList, new PagerOptions() { AutoHide = false, ContainerTagName = "ul", CssClass = "pagination mypage", PagerItemWrapperFormatString = "<li>{0}</li>", CurrentPagerItemWrapperFormatString = "<li class='active'><a href='#'>{0}</a></li>", PageIndexParameterName = "PageIndex" })
+</div>

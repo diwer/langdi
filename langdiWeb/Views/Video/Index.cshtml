@@ -1,0 +1,93 @@
+﻿@model IEnumerable<LangdiDomain.Video>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+}
+@section video{active}
+
+@section css{
+    <link href="/Content/right.css" rel="stylesheet" />
+    <link href="/Content/list.css" rel="stylesheet" />
+    <style>
+        .title {
+            height: 90px;
+            line-height: 90px;
+            width: 100%;
+        }
+
+            .title img {
+                width: 120px;
+                height: 80px;
+            }
+
+        #table td {
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .media-left img {
+            width: 100px;
+            height: 60px;
+        }
+
+        .oper {
+            width: 60px;
+        }
+    </style>
+}
+<div class="rhead">
+    <div class="row">
+        <div class="col-xs-12 col-md-4 hidden-xs">
+            <div class="h2">视频列表</div>
+        </div>
+        <div class="col-xs-12 col-md-8 hidden-xs">
+            <form action="/Video/Add" class="form-inline right" method="post">
+                <div>
+                    <label class="control-label">标题</label>
+                    <input type="text" name="title" class="form-control" />
+                    <label class="control-label">视频通用代码</label>
+                    <input type="text" name="code" class="form-control" />
+                    <button class="btn btn-default langdibtn" type="submit">添加</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="rheadxs">
+
+    <div class="h2">
+        视频列表
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            标题
+        </th>
+        <th>
+            内容
+        </th>
+        <th class="oper">操作</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+
+
+            </td>
+            <td>
+                @Html.ActionLink("删除", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

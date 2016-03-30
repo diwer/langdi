@@ -1,0 +1,607 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <title>MakeReal3D | 专注于工业应用的虚拟现实仿真平台</title>
+    <link rel="shortcut icon" href="images/logo_1.png" type="image/x-icon">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicono">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/focuspoint.css">
+    <link rel="stylesheet" href="css/full-screen.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+    
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+    
+    p {
+        opacity: 0.7;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    
+    .blackback {
+        background-image: url(images/Function/function0-pc.jpg);
+      
+    }
+    
+    .blackback img {
+        position: relative;
+        width: 50%;
+    }
+    
+    .visible-xs img {
+        position: relative;
+    }
+    
+    .blackback .container {
+          float:left; height:50%; margin-bottom:-120px;
+    }
+       #functionContent{
+    clear:both; height:240px; position:relative;
+}
+    @media(min-width: 1024px) {
+        .blackback p {
+            font-family: Arial, '微软雅黑';
+            font-size: 1.2em;
+        }
+        .col-md-3 {
+            margin-top: 60px;
+        }
+    }
+    
+    @media (max-width: 1024px)and (min-width: 768px) {
+        .blackback p {
+            font-family: Arial, '微软雅黑';
+            font-size: 1.2em;
+        }
+        .col-sm-3 {
+            margin-top: 60px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .blackback .container {
+            height: 600px;
+        }
+        .blackback h1 {
+            font-size: 1.2em;
+        }
+        .blackback p {
+            font-family: Arial, '微软雅黑';
+            font-size: 0.6em;
+            margin-top: 0.8em;
+        }
+        .col-sm-3 {
+            margin-top: 1em;
+        }
+    }
+    
+    .grayback {
+        background: #4a4a4a;
+    }
+    
+    .abso img {
+        margin-bottom: 2%;
+    }
+    
+    .abso h4 {
+        color: white;
+    }
+    
+    .abso p {
+        line-height: 1.7em;
+    }
+    
+    @media(min-width: 768px) {
+        .navbar-default {
+            background-color: rgba(74, 74, 74, 0.2);
+        }
+    }
+    
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #FFF;
+        background-color: rgba(74, 74, 74, 0.2)
+    }
+    
+    @media(min-width: 768px) {
+        .abso {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -12%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .abso {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            margin-top: -40%;
+        }
+    }
+    
+    .swiper-pagination-bullet {
+        background: white;
+    }
+    
+    .col-sm-5ths,
+    .col-lg-5ths,
+    .col-md-5ths {
+        position: relative;
+        min-height: 1px;
+    }
+    
+    @media ( min-width: 768px) {
+        .col-sm-5ths {
+            width: 20%;
+            float: left;
+            text-align: center;
+        }
+       
+    
+    }
+    
+    @media ( min-width: 992px) {
+        .col-md-5ths {
+            width: 20%;
+            float: left;
+            text-align: center;
+        }
+    }
+    
+    @media ( min-width: 1200px) {
+        .col-md-5ths {
+            width: 20%;
+            float: left;
+            text-align: center;
+        }
+    }
+    
+    #functionContent p {
+        font-size: 0.8em;
+        margin: 1em 0 2em;
+    }
+
+    @media(max-width: 768px) {
+        #functionContent p {
+            font-size: 0.5em;
+            opacity: 0.7;
+            margin: 1em 0;
+        };
+     
+    };
+    
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+    <div class="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img style="margin-top:-10px" src="images/logo1.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index1.html">首页</a></li>
+                    <li class="active"><a href="productFunction.html">产品功能</a></li>
+                    <li><a href="productApplication.html">解决方案</a></li>
+                    <li><a href="/portal/ProductList">产品动态</a></li>
+                    <li><a href="joinus.html">招贤纳士</a></li>
+                    <li><a href="address.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="swiper-container swiper-container-h" style="margin: 0 ">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide blackback">
+                <div id="functionContent" class="container" style="margin:0%">
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn1">
+                            <img class="img-responsive" src="images/Function/function-icons1.png" />
+                        </a>
+                        <p>多通道立体显示</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn2">
+                            <img class="img-responsive" src="images/Function/icons2.png" /></a>
+                        <p>在线导入</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn3"><img class="img-responsive" src="images/Function/icons3.png" /></a>
+                        <p>数字样机评审</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn4"><img class="img-responsive" src="images/Function/icons4.png" /></a>
+                        <p>刚体物理仿真</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn5"><img class="img-responsive" src="images/Function/icons5.png" /></a>
+                        <p>约束管理器
+                            <br>&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn6"><img class="img-responsive" src="images/Function/icons6.png" /></a>
+                        <p>灯光管理器
+                            <br>&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn7"><img class="img-responsive" src="images/Function/icons7.png" /></a>
+                        <p>虚拟拆装</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn8"><img class="img-responsive" src="images/Function/icons8.png" /></a>
+                        <p>虚拟现实外设接口</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn9"><img class="img-responsive" src="images/Function/icons9.png" /></a>
+                        <p>三维菜单
+                            <br>&nbsp;&nbsp;</p>
+                    </div>
+                    <div class="col-sm-5ths col-xs-4">
+                        <a class="" href="#" id="btn10"><img class="img-responsive" src="images/Function/icons10.png" /></a>
+                        <p>关键帧动画</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function1-pc.jpg">
+                    <img class="visible-sm" src="images/Function/function1-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function1-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons1-large.png" />
+                    <h4 style="font-size: 1.8em">多通道立体显示</h4>
+                    <p class="mb2em" style="opacity: 0.7">渲染节点与主节点同步显示</p>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <p></p>
+                        </div>
+                        <div class="col-xs-3 hidden-xs" style="text-align: left">
+                            <ul style="border-top:1px solid #fff">
+                                <li class="mt1em">
+                                    <h4>显示系统：</h4>
+                                </li>
+                                <li style="margin-top: 0.5em">
+                                    <p style="font-size: 0.8em;opacity: 0.7">CADWall、PowerWall、CAVE、</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 0.8em;opacity: 0.7">Oculus Rift、Sony HMD；</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3 hidden-xs" style="text-align: left">
+                            <ul style="border-top:1px solid #fff">
+                                <li class="mt1em">
+                                    <h4>立体模式：</h4>
+                                </li>
+                                <li style="margin-top: 0.5em">
+                                    <p style="font-size: 0.8em;opacity: 0.7">主动立体、被动立体、裸眼立体、红</p>
+                                </li>
+                                <li>
+                                    <p style="font-size: 0.8em;opacity: 0.7">蓝立体、全息立体；</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function3.jpg">
+                    <img class="visible-sm" src="images/Function/function3-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function3-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons2-large.png" />
+                    <h1>在线导入</h1>
+                    <p class="mb2em hidden-xs" style="opacity: 0.7">“在线导入”过程实现三维数据深度轻量化
+                        <br>实时捕获三维CAD/CAE数据，无需进行格式转换
+                        <br> 可实现局域网内三维模型在线导入
+                    </p>
+                    <p class="mb2em visible-xs" style="opacity: 0.7">“在线导入”过程实现三维数据深度轻量化实时捕获三维CAD/CAE数据，无需进行格式转换可实现局域网内三维模型在线导入
+                    </p>
+                    <div class="row mt1em">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-2 hidden-xs" style="text-align: left">
+                            <ul style="border-top:1px solid #fff">
+                                <li class="mt1em">
+                                    <h4>CAE软件支持</h4>
+                                </li>
+                                <li style="margin-top: 0.5em">
+                                    <p style="font-size: 0.8em;opacity: 0.7">Avizo、Ensight 、Ansys、 MSC Patran；</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-4 hidden-xs" style="text-align: left">
+                            <ul style="border-top:1px solid #fff">
+                                <li class="mt1em">
+                                    <h4>CAD软件支持</h4>
+                                </li>
+                                <li style="margin-top: 0.5em">
+                                    <p style="font-size: 0.8em;opacity: 0.7">UG NX、Jack、CATIA、DELMIA、 ProE、ProductView、Navisworks 、Creo、Solidworks、 3DVIA Composer、Tecnomatix、 DeepExploration；
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-2 hidden-xs" style="text-align: left">
+                            <ul style="border-top:1px solid #fff">
+                                <li class="mt1em">
+                                    <h4>其它软件支持</h4>
+                                </li>
+                                <li style="margin-top: 0.5em">
+                                    <p style="font-size: 0.8em;opacity: 0.7">Vega、3dsMax、Endorphin、 Maya；
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function4.jpg">
+                    <img class="visible-sm" src="images/Function/function4-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function4-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons3-large.png" />
+                    <h1>数字样机评审</h1>
+                    <p>•&nbsp;漫游&nbsp;&nbsp;&nbsp;•&nbsp;测量&nbsp;&nbsp;&nbsp;•&nbsp;标注&nbsp;&nbsp;&nbsp;•&nbsp;切面分析</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function5.jpg">
+                    <img class="visible-sm" src="images/Function/function5-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function5-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons4-large.png" />
+                    <h1>刚体物理仿真</h1>
+                    <p>•&nbsp;&nbsp;物理碰撞检测&nbsp;&nbsp; •&nbsp;&nbsp;获得更逼真的虚拟拆装效果
+                        <br/> •&nbsp;&nbsp; 高精度工业级物理引擎 &nbsp;&nbsp;•&nbsp;&nbsp; 碰撞力计算与显示 &nbsp;&nbsp;•&nbsp;&nbsp;支持力反馈设备实现触觉交互
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function6.jpg">
+                    <img class="visible-sm" src="images/Function/function6-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function6-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons5-large.png" />
+                    <h1>约束管理器</h1>
+                    <p>•&nbsp;旋转副&nbsp;&nbsp;&nbsp; •&nbsp;圆柱副&nbsp;&nbsp;&nbsp; •&nbsp;棱柱副 &nbsp;&nbsp;&nbsp;•&nbsp;平面副&nbsp;&nbsp;&nbsp; •&nbsp;球形副&nbsp;&nbsp;&nbsp; •&nbsp;自定义约束副
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function7.jpg">
+                    <img class="visible-sm" src="images/Function/function7-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function7-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons6-large.png" />
+                    <h1>灯光管理器</h1>
+                    <p>•&nbsp;聚光灯&nbsp;&nbsp;&nbsp; •&nbsp;泛光灯&nbsp;&nbsp;&nbsp; •&nbsp; 平行灯&nbsp;&nbsp;&nbsp; •&nbsp; 天光
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function8.jpg">
+                    <img class="visible-sm" src="images/Function/function8-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function8-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons7-large.png" />
+                    <h1>虚拟拆装
+</h1>
+                    <p>•&nbsp;部件分组&nbsp;&nbsp;&nbsp; •&nbsp;实时拾取&nbsp;&nbsp;&nbsp; •&nbsp; 干涉检查
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function9.jpg">
+                    <img class="visible-sm" src="images/Function/function9-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function9-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons8-large.png" />
+                    <h1>虚拟现实外设接口</h1>
+                    <p>兼容主流设备</p><p>可提供特殊设备接口定制开发
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function10.jpg">
+                    <img class="visible-sm" src="images/Function/function10-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function10-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons9-large.png" />
+                    <h1>三维菜单
+</h1>
+                    <p> •&nbsp;自然交互&nbsp;&nbsp;&nbsp; •&nbsp;操作简便&nbsp;&nbsp;&nbsp; •&nbsp;功能映射
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="focuspoint">
+                    <img class="hidden-xs hidden-sm" src="images/Function/function11.jpg">
+                    <img class="visible-sm" src="images/Function/function11-pad.jpg">
+                    <img class="visible-xs" src="images/Function/function11-phone.jpg">
+                </div>
+                <div class="abso">
+                    <img src="images/Function/icons10-large.png" />
+                    <h1>关键帧动画</h1>
+                    <p> •&nbsp;摄像机动画&nbsp;&nbsp;&nbsp; •&nbsp;物体运动动画
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide grayback">
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <ul class="bottomNav mt1em" style="line-height: 2.4em">
+                                <li><a style="color:white" href="productFunction.html">产品功能&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                <li><a style="color:white" href="productApplication.html">解决方案&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                <li><a style="color:white" href="product1.html">产品动态&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                <li><a style="color:white" href="joinus.html">招贤纳士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                <li><a style="color:white" href="address.html">联系我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                                <li><a style="color:#fff" href="">微信公共账号</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="foot-detail text-center">
+                        <p style="opacity: 0.5;margin-top: 2em">版权所有：北京朗迪锋科技有限公司京ICP备13044728
+                            <p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-h"></div>
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/jquery.focuspoint.js"></script>
+    <script src="scripts/swiper.min.js"></script>
+    <!-- endbuild -->
+    <script>
+    var mySwiper = new Swiper('.swiper-container-h', {
+        pagination: '.swiper-pagination-h',
+        paginationClickable: true,
+        direction: 'vertical',
+        slidesPerView: 1,
+        mousewheelControl: true
+    });
+
+
+    $('#btn1').click(function() {
+        mySwiper.slideTo(1, 1000, true);
+    })
+    $('#btn2').click(function() {
+        mySwiper.slideTo(2, 1000, true);
+    })
+    $('#btn3').click(function() {
+        mySwiper.slideTo(3, 1000, true);
+    })
+    $('#btn4').click(function() {
+        mySwiper.slideTo(4, 1000, true);
+    })
+    $('#btn5').click(function() {
+        mySwiper.slideTo(5, 2000, true);
+    })
+    $('#btn6').click(function() {
+        mySwiper.slideTo(6, 2000, true);
+    })
+    $('#btn7').click(function() {
+        mySwiper.slideTo(7, 2000, true);
+    })
+    $('#btn8').click(function() {
+        mySwiper.slideTo(8, 3000, true);
+    })
+    $('#btn9').click(function() {
+        mySwiper.slideTo(9, 3000, true);
+    })
+    $('#btn10').click(function() {
+        mySwiper.slideTo(10, 3000, true);
+    })
+    </script>
+</body>
+
+</html>

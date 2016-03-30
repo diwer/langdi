@@ -1,0 +1,458 @@
+﻿<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>MakeReal3D | 专注于工业应用的虚拟现实仿真平台</title>
+    <link rel="shortcut icon" href="images/logo_1.png" type="image/x-icon">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicono">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <!-- endbuild -->
+    <style>
+        html,
+        body {
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap;
+        }
+
+        .iw_poi_content {
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .address {
+            font-size: 24px;
+            color: #222222;
+        }
+
+        textarea {
+            width: 100%;
+            height: 136px;
+            line-height: 2.5em;
+            border-radius: 6px;
+            text-indent: 13px;
+            font-size: 16px;
+        }
+
+        .form-control {
+            width: 100%;
+            height: 40px;
+            font-size: 16px;
+        }
+
+        h3 {
+            color: #fff;
+        }
+
+        #tj {
+            background-color: #000;
+            width: 100px;
+            border: 2px solid #0471BB;
+            height: 40px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+            #tj:hover {
+                background: #0471BB;
+            }
+
+            #tj p:hover {
+                color: #fff;
+            }
+
+        .change {
+            color: #0471BB;
+        }
+
+        .aaa {
+            display: none;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+        }
+
+        @media(max-width: 768px) {
+            .aaa {
+                display: none;
+                position: absolute;
+            }
+        }
+
+        .bbb {
+            position: relative;
+        }
+
+            .bbb:hover .aaa {
+                display: block;
+            }
+
+        @media(max-width: 768px) {
+            #map {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img style="margin-top:-11px" src="images/logo1.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index1.html">首页</a></li>
+                    <li><a href="productFunction.html">产品功能</a></li>
+                    <li><a href="productApplication.html">解决方案</a></li>
+                    <li><a href="/portal/ProductList">产品动态</a></li>
+                    <li><a href="joinus.html">招贤纳士</a></li>
+                    <li class="active"><a href="address.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div style="height:400px;" id="dituContent"></div>
+    <div class="appli">
+        <div class="address">
+            <div class="row" style="background:#292929">
+
+                <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs" style="position: relative; ">
+
+                    <div style="
+  height: 100%;
+
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: -10em; right: 0;  ">
+                        <div class="col-md-3 col-xs-4 text-right mt1em ">
+                            <h5>地址:</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left mt1em ">
+                            <h5>北京市海淀区中关村南大街乙12号天作商城三层西区</h5>
+                        </div>
+                        <div class="col-md-3 col-xs-4 text-right">
+                            <h5>产品经理:</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left">
+                            <h5>徐先生（18610077953）</h5>
+                        </div>
+                        <div class="col-md-3 col-xs-4 text-right">
+                            <h5>电话:</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left">
+                            <h5>010-82168616-858</h5>
+                        </div>
+                        <div class="col-md-3 col-xs-4 text-right">
+                            <h5>邮箱:</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left">
+                            <h5 style="word-wrap:break-word;">makereal3d@longtek.net</h5>
+                        </div>
+                        <div class="col-md-3 col-xs-4 text-right">
+                            <h5>微信订阅号:</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left visible-xs">
+                            <h5>MakeReal3D_VSP<br>&nbsp;</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left hidden-xs">
+                            <h5>MakeReal3D_VSP</h5>
+                        </div>
+                        <div class="col-md-3 col-xs-4 text-right">
+                            <h5>QQ:</h5>
+                        </div>
+                        <div class="col-md-9 col-xs-8 text-left">
+                            <h5>2861672425</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 visible-xs">
+
+
+                    <div class="col-md-3 col-xs-4 text-right mt1em ">
+                        <h5>地址:</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left mt1em ">
+                        <h5>北京市海淀区中关村南大街乙12号天作商城三层西区</h5>
+                    </div>
+                    <div class="col-md-3 col-xs-4 text-right">
+                        <h5>产品经理:</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left">
+                        <h5>徐先生（18610077953）</h5>
+                    </div>
+                    <div class="col-md-3 col-xs-4 text-right">
+                        <h5>电话:</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left">
+                        <h5>010-82168616-858</h5>
+                    </div>
+                    <div class="col-md-3 col-xs-4 text-right">
+                        <h5>邮箱:</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left">
+                        <h5 style="word-wrap:break-word;">makereal3d@longtek.net</h5>
+                    </div>
+                    <div class="col-md-3 col-xs-4 text-right">
+                        <h5>微信订阅号:</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left visible-xs">
+                        <h5>MakeReal3D_VSP<br>&nbsp;</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left hidden-xs">
+                        <h5>MakeReal3D_VSP</h5>
+                    </div>
+                    <div class="col-md-3 col-xs-4 text-right">
+                        <h5>QQ:</h5>
+                    </div>
+                    <div class="col-md-9 col-xs-8 text-left">
+                        <h5>2861672425</h5>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12" style="background:#000">
+                    <div class="col-xs-12">
+                        <h5 class="mt1em">软件试用申请表</h5>
+                    </div>
+                    <form id="msform">
+                        <div class="form-group col-md-6">
+                            <input type="text" name="name" class="form-control must" placeholder="*姓名:">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="phone" id="cphone" class="form-control must" placeholder="*电话:">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="company" class="form-control must" placeholder="*单位:">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" name="email" id="cemail" class="form-control must" placeholder="*邮箱:">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="needdoc" class=" must" placeholder="*应用需求:"></textarea>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea name="remark" placeholder="备注:"></textarea>
+                        </div>
+                        <div style="float: right">
+                            <div class="form-group col-xs-12">
+                                <button id="tj" type="button">
+                                    <p class="change">提交</p>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <ul class="bottomNav mt1em">
+                    <li><a href="productFunction.html">产品功能&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="productApplication.html">解决方案&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="product1.html">产品动态&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="joinus.html">招贤纳士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="address.html">联系我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li>
+                        <div class="bbb">
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信公众号</a>
+                            <div class="aaa hidden-xs"><img src="images/erwemas.png" alt="" /></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-detail text-center">
+                <p style="margin-bottom:1em;opacity: 0.5">版权所有：北京朗迪锋科技有限公司京ICP备13044728
+                <p>
+            </div>
+        </div>
+    </div>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    <script type="text/javascript">
+        $("#tj").click(function () {
+            var mustlis = $(".must");
+            var result = true;
+            for (var i = 0; i < mustlis.length; i++) {
+                if ($(mustlis[i]).val().replace(" ", "") == "") {
+                    result = false;
+                }
+            }
+            if (!result) {
+                alert("还有必填项没有填写");
+                return;
+            }
+            var emailregex = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+            if (!emailregex.test($("#cemail").val())) {
+                alert("邮箱格式错误，请检查"); return;
+            }
+            if (!(/^1[3|4|5|7|8]\d{9}$/.test($("#cphone").val()))) {
+                alert("手机号码有误，请重填"); return;
+            }
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/Portal/AddContact",
+                data: $('#msform').serialize(),
+                success: function (result) {
+                    if (result == "success") {
+                        alert("申请成功");
+                       $('#msform')[0].reset()
+                    } else {
+                        alert(result);
+                    }
+                },
+                error: function (data) {
+                    alert("error:" + "网络错误，请稍后再试");
+                }
+
+            });
+        });
+
+        //创建和初始化地图函数：
+        function initMap() {
+            createMap();//创建地图
+            setMapEvent();//设置地图事件
+            addMapControl();//向地图添加控件
+            addMarker();//向地图中添加marker
+        }
+
+        //创建地图函数：
+        function createMap() {
+            var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+            var point = new BMap.Point(116.330069, 39.968032);//定义一个中心点坐标
+            map.centerAndZoom(point, 17);//设定地图的中心点和坐标并将地图显示在地图容器中
+            window.map = map;//将map变量存储在全局
+        }
+
+        //地图事件设置函数：
+        function setMapEvent() {
+            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+            map.enableKeyboard();//启用键盘上下左右键移动地图
+        }
+
+        //地图控件添加函数：
+        function addMapControl() {
+            //向地图中添加缩放控件
+            var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+            map.addControl(ctrl_nav);
+            //向地图中添加比例尺控件
+            var ctrl_sca = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+            map.addControl(ctrl_sca);
+        }
+
+        //标注点数组
+        var markerArr = [{ title: "北京市朗迪锋科技有限公司", content: "地址：北京市海淀区中关村南大街乙12号天作商城三层西区<br/>电话：010-82168616-858", point: "116.330213|39.967043", isOpen: 1, icon: { w: 23, h: 25, l: 69, t: 21, x: 9, lb: 12 } }
+        ];
+        //创建marker
+        function addMarker() {
+            for (var i = 0; i < markerArr.length; i++) {
+                var json = markerArr[i];
+                var p0 = json.point.split("|")[0];
+                var p1 = json.point.split("|")[1];
+                var point = new BMap.Point(p0, p1);
+                var iconImg = createIcon(json.icon);
+                var marker = new BMap.Marker(point, { icon: iconImg });
+                var iw = createInfoWindow(i);
+                var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
+                marker.setLabel(label);
+                map.addOverlay(marker);
+                label.setStyle({
+                    borderColor: "#808080",
+                    color: "#333",
+                    cursor: "pointer"
+                });
+
+                (function () {
+                    var index = i;
+                    var _iw = createInfoWindow(i);
+                    var _marker = marker;
+                    _marker.addEventListener("click", function () {
+                        this.openInfoWindow(_iw);
+                    });
+                    _iw.addEventListener("open", function () {
+                        _marker.getLabel().hide();
+                    })
+                    _iw.addEventListener("close", function () {
+                        _marker.getLabel().show();
+                    })
+                    label.addEventListener("click", function () {
+                        _marker.openInfoWindow(_iw);
+                    })
+                    if (!!json.isOpen) {
+                        label.hide();
+                        _marker.openInfoWindow(_iw);
+                    }
+                })()
+            }
+        }
+        //创建InfoWindow
+        function createInfoWindow(i) {
+            var json = markerArr[i];
+            var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+            return iw;
+        }
+        //创建一个Icon
+        function createIcon(json) {
+            var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
+            return icon;
+        }
+
+        initMap();//创建和初始化地图
+    </script>
+</body>
+
+</html>

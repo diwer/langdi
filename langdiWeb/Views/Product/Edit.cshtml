@@ -1,0 +1,198 @@
+﻿@model LangdiDomain.News
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_HomeLayoutView.cshtml";
+    var selectListitem = ViewBag.SelectList as IEnumerable<SelectListItem>;
+}
+@section product{active}
+@section css{
+
+    <link href="~/Content/right.css" rel="stylesheet" />
+    <style>
+        .form {
+            margin-top: 0;
+            margin-left: 15px;
+            width: 100%;
+        }
+
+            .form select {
+                height: 45px;
+            }
+
+            .form option {
+                height: 45px;
+            }
+
+
+        .btn {
+            width: 100%;
+            height: 45px;
+            line-height: 30px;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        .img {
+            width: 240px;
+            height: 150px;
+            line-height: 140px;
+            text-align: center;
+            padding: 0;
+            background-color: ActiveCaption;
+        }
+
+            .img img {
+                width: 240px;
+                height: 150px;
+                margin: 0;
+                padding: 0;
+            }
+
+        .top15 {
+            padding-top: 15px;
+        }
+
+        #uploadImg input[type=file] {
+            display: none;
+        }
+    </style>
+}
+<div class="rhead">
+    <div class="h2">新增文章</div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form langdiform">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-8 col-xs-12">
+                @Html.Label("标题", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            <div class="col-md-4 col-xs-12">
+                @Html.Label("所属分类", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("categoryId", selectListitem, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+                <div class="col-md-12 col-xs-12">
+                @Html.Label("简介", htmlAttributes: new { @class = "control-label" })
+
+                <textarea rows="3" id="Description" name="Description" class="form-control">
+                    @Model.Description
+                </textarea>
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12 img-responsive">
+                @Html.Label("图片", htmlAttributes: new { @class = "control-label" })
+                <div id="imgdiv" class="img form-control">
+                    <img src="/upload/@Model.Image.Src" />
+                </div>
+
+                @Html.Hidden("imgId", Model.Image.Id)
+            </div>
+            <div class="col-xs-3">
+                <div id="uploadImg" class="btn btn-default langdibtn">添加图片</div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="form-group top15">
+
+            <div class="col-md-12">
+                @Html.Label("内容", htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                <div class="clearfix"></div>
+                <script id="container" name="Content" type="text/plain">
+                    @Html.Raw(Model.Content)
+                </script>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-3 col-xs-6">
+                <a href="/product/index" class="btn btn-default langdibtn">取消</a>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <button type="submit" class="btn btn-default langdibtn">保存</button>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="/ueditor/ueditor.config.js"></script>
+    <script src="/ueditor/ueditor.all.min.js"></script>
+    <script src="/content/fex/webuploader.nolog.js"></script>
+    <script>
+        var ue = UE.getEditor('container');
+        var uploader = WebUploader.create({
+            auto: true,
+            swf: '/content/fex/Uploader.swf',
+            server: '/base/uploadfile',
+            pick: '#uploadImg',
+            resize: false,
+            accept: {
+                title: 'Images',
+                extensions: 'gif,jpg,jpeg,bmp,png',
+                mimeTypes: 'image/*'
+            }
+        });
+        function update() {
+            var uploader = WebUploader.create({
+                auto: true,
+                swf: '/content/fex/Uploader.swf',
+                server: '/base/uploadfile',
+                pick: '#uploadImg',
+                resize: false,
+                accept: {
+                    title: 'Images',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
+                }
+            });
+            uploader.on('uploadSuccess', function (file, ret) {
+                if (ret.success) {
+                    $("#imgdiv img").attr("src", $("#global_img_site").val() + "/" + ret.filepath);
+                    $("#imgId").val(ret.imgid);
+                    $("#uploadImg").html("换一张")
+                    update()
+                    uploader.reset();
+                } else {
+                    alert("上传失败，请选择小与2m的图片");
+                }
+            });
+            uploader.on('uploadError', function () {
+                uploader.reset();
+            });
+        }
+        uploader.on('uploadSuccess', function (file, ret) {
+            if (ret.success) {
+                var $img = "<img src='#' alt='' />"
+                $("#imgdiv").html($img);
+                $("#imgdiv img").attr("src", $("#global_img_site").val() + "/" + ret.filepath);
+                $("#imgId").val(ret.imgid);
+                $("#uploadImg").html("换一张")
+                update()
+                uploader.reset();
+            } else {
+                alert("上传失败，请选择小与2m的图片");
+            }
+        });
+        uploader.on('uploadError', function () {
+            uploader.reset();
+        });
+    </script>
+}

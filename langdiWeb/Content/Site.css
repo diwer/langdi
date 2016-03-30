@@ -1,0 +1,52 @@
+﻿.langdibtn {
+    display: inline-block;
+    color: white;
+    background-color:#0471BB;
+}
+
+    .langdibtn:hover {
+        background-color: #F08519;
+        color: white;
+    }
+
+.nopadding-left {
+    padding-left: 0;
+}
+
+.nopadding-right {
+    padding-right: 0;
+}
+
+.langditable {
+}
+
+    .langditable td {
+        height: 50px;
+        vertical-align: auto;
+    }
+
+.langdiform {
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+
+    .langdiform input {
+        height: 45px;
+    }
+
+    .langdiform .btn {
+        height: 45px;
+    }
+a:hover{
+    color:#F08519
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .langdiform {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}

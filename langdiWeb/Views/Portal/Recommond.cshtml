@@ -1,0 +1,11 @@
+﻿@model IEnumerable<LangdiDomain.News>
+
+
+@foreach (var item in Model)
+{
+    <div class=" col-md-12 col-sm-4 mt1em">
+        <a href="/portal/detail/@item.Id"><img class="img-responsive" src="/upload/@item.Image.Src"></a>
+        <h2><a href="/portal/detail/@item.Id" style="color:inherit;font-weight: 500;line-height: 1.3;">@item.Title</a></h2>
+        <p class="zxc mt2em">@item.Description</p>
+        </div>
+}

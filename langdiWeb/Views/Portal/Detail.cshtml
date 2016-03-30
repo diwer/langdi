@@ -1,0 +1,185 @@
+﻿@model LangdiDomain.News
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = null;
+}
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>@Model.Title</title>
+    <meta name="keywords" content="@Model.Category.Name">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon"/>
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+    <style>
+    body {
+        font-family: Arial, "微软雅黑";
+        background: #fff;
+    }
+    
+    h1 {
+        color: #000;
+        color: #000;
+        font-size: 1.5em;
+        line-height: 1.2em;
+        margin-top: 0.5em;
+    }
+    h2 {
+        color: #000;
+        font-size: 1.2em;
+        margin-top: 0.5em;
+    }
+    p {
+        color: #000;
+        font-size: 1em;
+        line-height: 1.5em;
+    }
+    
+    .shadow:hover {
+        box-shadow: 5px 5px 5px #9c9c9c;
+    }
+    
+    .banner #group .btn {
+        font-size: 24px;
+        background: transparent;
+        border: 1px solid #0471BB;
+        color: #0471BB;
+    }
+    
+    .banner #group .btn:hover {
+        background: #0471BB;
+        opacity: 1;
+        color: #ffffff;
+    }
+    
+    #group1 .btn {
+        font-size: 24px;
+        background: transparent;
+        border: 1px solid #0471BB;
+        color: #0471BB;
+    }
+    
+    #group1 .btn:hover {
+        background: #0471BB;
+        color: #ffffff;
+    }
+    
+    .btn-toolbar .btn {
+        color: #0471BB;
+        border: 1px solid #0471BB;
+        background: transparent;
+    }
+    
+    .btn-toolbar .btn:hover {
+        background: #0471BB;
+        color: #fff;
+    }
+    
+    .shadow {
+        padding-left: 0;
+    }
+    /* .shadow .col-md-4{
+    padding-left: 0;
+  }*/
+    
+    .container {
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .col-md-8 img{
+            width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    }
+ 
+    </style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy">
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="header">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index1.html"><img style="margin-top:-10px" src="~/images/logo1.png"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index1.html">首页</a></li>
+                    <li><a href="/productFunction.html">产品功能</a></li>
+                    <li><a href="/productApplication.html">产品应用</a></li>
+                    <li class="active"><a href="/portal/productlist">产品动态</a></li>
+                    <li><a href="/joinus.html">招贤纳士</a></li>
+                    <li><a href="/address.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    
+                    <h1 class="mt3em" style="text-align: center">@Model.Title</h1>
+                   
+                    <div class="mt1em"></div>
+                    @Html.Raw(Model.Content)
+                </div>
+                <div class="col-md-4" style="margin-bottom:2%">
+                    <h1 class="mt3em tj" style="text-indent: 10px">推荐</h1>
+                    <div class="row">
+                        @Html.Action("Recommond", new { categoryId = @Model.CategoryId })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer mt2em">
+        <div class="container">
+            <div class="row">
+                <ul class="bottomNav mt1em">
+                    <li><a href="/productFunction.html">产品功能&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="/productApplication.html">产品应用&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="/portal/productlist">产品动态&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="/joinus.html">招贤纳士&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="/address.html">联系我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    <li><a href="">微信公共账号</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot-detail text-center"><p>版权所有：北京朗迪锋科技有限公司京ICP备13044728<p></div>
+    </div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="../../scripts/main.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>
